@@ -1,9 +1,12 @@
 require "minitest/autorun"
 require "minitest/pride"
-require "../lib/insertion_sort"
+require "insertion_sort"
 
 class InsertionSortTest < Minitest::Test
 
-
+  def test_class_exists
+    sorter = InsertionSort.new
+    assert sorter
+  end
 
 end
