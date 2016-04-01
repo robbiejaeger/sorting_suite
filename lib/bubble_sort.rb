@@ -1,11 +1,14 @@
 class BubbleSort
 
   def sort(array)
-    if array.length > 1
-      swapped = false
-      while swapped == false
-        array.each_index do |index|
-          #
+    return array if array.size < 2
+    swaps = true
+    while swaps
+      swaps = false
+      0.upto(array.size - 2) do |index|
+        if array[index] > array[index + 1]
+          swap(array, index, (index + 1))
+          swaps = true
         end
       end
     end
