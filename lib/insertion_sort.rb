@@ -3,9 +3,18 @@ class InsertionSort
   def sort(array)
     array = clean_array(array)
     return array if array.size < 2
-    sorted_array = []
+    sorted_array = [array[0]]
+    array.delete_at(0)
 
-    
+    array.each do |num|
+      sorted_array.each do |s_num|
+        if num < s_num
+          
+        else
+
+        end
+      end
+    end
   end
 
 
