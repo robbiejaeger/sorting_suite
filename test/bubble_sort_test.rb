@@ -2,10 +2,6 @@ require "minitest/autorun"
 require "minitest/pride"
 require "bubble_sort"
 
-class BubbleSort
-  public :swap
-end
-
 class BubbleSortTest < Minitest::Test
 
   def test_class_exists
@@ -29,15 +25,6 @@ class BubbleSortTest < Minitest::Test
     sorted = sorter.sort(array)
 
     assert_equal [1], sorted
-  end
-
-  def test_swap
-    sorter = BubbleSort.new
-    array = [2, 3, 7, 4]
-
-    swapped = sorter.swap(array, 0, 3)
-
-    assert_equal [4, 3, 7, 2], swapped
   end
 
   def test_can_sort_small_array
