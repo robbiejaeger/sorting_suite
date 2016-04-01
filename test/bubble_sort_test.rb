@@ -58,4 +58,12 @@ class BubbleSortTest < Minitest::Test
     assert_equal (1..15).to_a, sorted
   end
 
+  def test_can_sort_array_with_empty_and_nil_element
+    sorter = BubbleSort.new
+    array = ["d", nil, "a", "c", "", "b"]
+
+    sorted = sorter.sort(array)
+
+    assert_equal ["a", "b", "c", "d"], sorted
+  end
 end

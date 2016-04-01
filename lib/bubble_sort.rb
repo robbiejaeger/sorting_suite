@@ -1,6 +1,7 @@
 class BubbleSort
 
   def sort(array)
+    array = clean_array(array)
     return array if array.size < 2
     swaps = true
     while swaps
@@ -16,6 +17,10 @@ class BubbleSort
   end
 
   private
+
+  def clean_array(array)
+    array.reject {|i| i.to_s.empty?}
+  end
 
   def swap(array, swap_right, swap_left)
       array[swap_right], array[swap_left] = array[swap_left], array[swap_right]
