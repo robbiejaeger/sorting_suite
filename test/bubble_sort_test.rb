@@ -2,6 +2,10 @@ require "minitest/autorun"
 require "minitest/pride"
 require "bubble_sort"
 
+class BubbleSort
+  public :swap
+end
+
 class BubbleSortTest < Minitest::Test
 
   def test_class_exists

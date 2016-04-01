@@ -15,7 +15,7 @@ class BubbleSort
     array
   end
 
-  # private
+  private
 
   def swap(array, swap_right, swap_left)
       array[swap_right], array[swap_left] = array[swap_left], array[swap_right]
