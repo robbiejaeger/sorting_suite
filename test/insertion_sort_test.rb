@@ -28,7 +28,6 @@ class InsertionSortTest < Minitest::Test
   end
 
   def test_can_sort_small_array
-    skip
     sorter = InsertionSort.new
     array = ["d", "b", "a", "c"]
 
@@ -37,4 +36,12 @@ class InsertionSortTest < Minitest::Test
     assert_equal ["a", "b", "c", "d"], sorted
   end
 
+  def test_can_sort_larger_array_of_nums
+    sorter = InsertionSort.new
+    array = [2, 4, 6, 5, 8, 9, 1, 7, 3]
+
+    sorted = sorter.sort(array)
+
+    assert_equal [1, 2, 3, 4, 5, 6, 7, 8, 9], sorted
+  end
 end
