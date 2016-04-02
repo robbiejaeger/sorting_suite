@@ -6,10 +6,11 @@ class InsertionSort
     sorted_array = [array[0]]
     array.delete_at(0)
 
-    array.each do |num|
-      sorted_array.each do |s_num|
-        if num < s_num
-          
+    array.each_index do |index|
+      sorted_array_index = 0
+      while sorted_array_index <= sorted_array.count
+        if array[index] <= sorted_array[sorted_array_index]
+
         else
 
         end
@@ -24,9 +25,5 @@ class InsertionSort
     array.reject {|i| i.to_s.empty?}
   end
 
-  def swap(array, swap_right, swap_left)
-      array[swap_right], array[swap_left] = array[swap_left], array[swap_right]
-      array
-  end
 
 end
