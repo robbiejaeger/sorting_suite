@@ -4,6 +4,7 @@ class MergeSort
     array = clean_array(array)
     return array if array.size < 2
 
+    
 
   end
 
@@ -20,9 +21,9 @@ class MergeSort
     elsif right_array == []
       left_array
     elsif left_array[0] < right_array[0]
-      left_array[0] + merge_arrays(left_array[1.upto(left_array.count)], right_array)
+      [left_array[0]] + merge_arrays(left_array[1..left_array.count], right_array)
     elsif left_array[0] > right_array[0]
-      right_array[0] + merge_arrays(left_array, right_array[1.upto(right_array.count)])
+      [right_array[0]] + merge_arrays(left_array, right_array[1..right_array.count])
     end
   end
 
