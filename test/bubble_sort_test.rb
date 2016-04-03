@@ -54,4 +54,13 @@ class BubbleSortTest < Minitest::Test
     assert_equal ["a", "b", "c", "d"], sorted
   end
 
+  def test_can_sort_reversed_array
+    sorter = BubbleSort.new
+    array = [5, 4, 3, 2, 1]
+
+    sorted = sorter.sort(array)
+
+    assert_equal [1, 2, 3, 4, 5], sorted
+  end
+  
 end
