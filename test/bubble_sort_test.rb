@@ -38,7 +38,7 @@ class BubbleSortTest < Minitest::Test
 
   def test_can_sort_larger_array
     sorter = BubbleSort.new
-    array = [3, 2, 6, 7, 9, 5, 1, 4, 8, 10, 15, 11, 13, 12, 14]
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].shuffle
 
     sorted = sorter.sort(array)
 
@@ -47,10 +47,11 @@ class BubbleSortTest < Minitest::Test
 
   def test_can_sort_array_with_empty_and_nil_element
     sorter = BubbleSort.new
-    array = ["d", nil, "a", "c", "", "b"]
+    array = ["d", nil, "a", "c", "", "b"].shuffle
 
     sorted = sorter.sort(array)
 
     assert_equal ["a", "b", "c", "d"], sorted
   end
+
 end

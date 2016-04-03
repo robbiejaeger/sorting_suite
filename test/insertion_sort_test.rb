@@ -38,10 +38,20 @@ class InsertionSortTest < Minitest::Test
 
   def test_can_sort_larger_array_of_nums
     sorter = InsertionSort.new
-    array = [2, 4, 6, 5, 8, 9, 1, 7, 3]
+    array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].shuffle
 
     sorted = sorter.sort(array)
 
-    assert_equal [1, 2, 3, 4, 5, 6, 7, 8, 9], sorted
+    assert_equal (1..15).to_a, sorted
   end
+
+  def test_can_sort_array_with_empty_and_nil_element
+    sorter = InsertionSort.new
+    array = ["d", nil, "a", "c", "", "b"].shuffle
+
+    sorted = sorter.sort(array)
+
+    assert_equal ["a", "b", "c", "d"], sorted
+  end
+
 end
