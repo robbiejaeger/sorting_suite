@@ -4,8 +4,8 @@ class MergeSort
     array = clean_array(array)
     return array if array.size < 2
 
-    
-  nd
+
+  end
 
 
   private
