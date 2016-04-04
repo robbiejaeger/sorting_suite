@@ -4,11 +4,11 @@ class MergeSort
     array = clean_array(array)
     return array if array.size < 2
 
-    # Split arrays recursively
+    # Split array recursively
     middle_of_array = (array.count/2).ceil
     left_array = sort(array[0..middle_of_array - 1])
     right_array = sort(array[middle_of_array..array.count])
-    # Merge array recursively
+    # Merge arrays recursively and return
     merge_arrays(left_array, right_array)
   end
 
@@ -20,6 +20,7 @@ class MergeSort
   end
 
   def merge_arrays(left_array, right_array)
+    # Merge until one array is empty
     if left_array == []
       right_array
     elsif right_array == []
