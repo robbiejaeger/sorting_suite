@@ -5,7 +5,6 @@ class InsertionSort
     return array if array.size < 2
 
     sorted = [array.shift]
-
     array.each_index do |index|
       sorted_index = 0
       push_elements(array, index, sorted, sorted_index)
