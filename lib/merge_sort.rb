@@ -20,6 +20,7 @@ class MergeSort
   end
 
   def merge_arrays(left_array, right_array)
+    # Merge recursively until array is empty
     if right_array == []
       left_array
     elsif left_array == []
