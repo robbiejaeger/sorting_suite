@@ -56,11 +56,11 @@ class InsertionSortTest < Minitest::Test
 
   def test_can_sort_reversed_array
     sorter = InsertionSort.new
-    array = [5, 4, 3, 2, 1]
+    array = [7, 6, 5, 4, 3, 2, 1]
 
     sorted = sorter.sort(array)
 
-    assert_equal [1, 2, 3, 4, 5], sorted
+    assert_equal [1, 2, 3, 4, 5, 6, 7], sorted
   end
 
 end

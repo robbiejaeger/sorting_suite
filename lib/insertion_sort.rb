@@ -4,23 +4,13 @@ class InsertionSort
     array = clean_array(array)
     return array if array.size < 2
 
-    sorted_array = [array[0]]
-    array.delete_at(0)
+    sorted = [array.shift]
 
     array.each_index do |index|
-      sorted_array_index = 0
-      while sorted_array_index < sorted_array.count
-        if array[index] <= sorted_array[sorted_array_index]
-          sorted_array.insert(sorted_array_index, array[index])
-          break
-        elsif sorted_array_index == sorted_array.count - 1
-          sorted_array.insert(sorted_array_index + 1, array[index])
-          break
-        end
-        sorted_array_index += 1
-      end
+      sorted_index = 0
+      push_elements(array, index, sorted, sorted_index)
     end
-    sorted_array
+    sorted
   end
 
 
@@ -30,5 +20,17 @@ class InsertionSort
     array.reject {|i| i.to_s.empty?}
   end
 
+  def push_elements(array, index, sorted, sorted_index)
+    while sorted_index < sorted.count
+      if array[index] <= sorted[sorted_index]
+        sorted.insert(sorted_index, array[index])
+        break
+      elsif sorted_index == sorted.count - 1
+        sorted.insert(sorted_index + 1, array[index])
+        break
+      end
+      sorted_index += 1
+    end
+  end
 
 end
