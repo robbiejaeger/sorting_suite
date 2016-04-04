@@ -20,11 +20,10 @@ class MergeSort
   end
 
   def merge_arrays(left_array, right_array)
-    # Merge until one array is empty
-    if left_array == []
-      right_array
-    elsif right_array == []
+    if right_array == []
       left_array
+    elsif left_array == []
+      right_array
     elsif left_array[0] < right_array[0]
       [left_array[0]] + merge_arrays(left_array[1..left_array.count], right_array)
     elsif left_array[0] > right_array[0]
