@@ -3,6 +3,7 @@ class BubbleSort
   def sort(array)
     array = clean_array(array)
     return array if array.size < 2
+    
     swaps = true
     while swaps
       swaps = false
